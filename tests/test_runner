@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+import unittest
+
+# Assuming all test modules are imported and test cases are defined
+if __name__ == '__main__':
+    suite = unittest.TestSuite()
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_raft))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_network))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_storage))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_state_machine))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_leader_election))
+    suite.addTest(unittest.TestLoader().loadTestsFromModule(test_log_compaction))
+    unittest.TextTestRunner(verbosity=2).run(suite)

@@ -1,0 +1,17 @@
+// src/main.cpp
+#include <iostream>
+#include "include/raft.h"
+
+int main(int argc, char* argv[]) {
+    // Example: Initialize and run a raft node
+    raft::RaftNode node;
+    if (!node.initialize()) {
+        std::cerr << "Failed to initialize raft node" << std::endl;
+        return 1;
+    }
+
+    while (true) {
+        node.run();
+    }
+    return 0;
+}
